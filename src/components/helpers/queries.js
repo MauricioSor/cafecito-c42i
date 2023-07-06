@@ -11,6 +11,7 @@ export const iniciarSesion = async (usuario)=>{
     try{
         const respuesta = await fetch(URL_usuario);
         const listausuarios = await respuesta.json();
+        console.log(listausuarios);
         const usuarioBuscado = listausuarios.find((itemUsuario)=> itemUsuario.email === usuario.email);
         if(usuarioBuscado){
             // el mail era correcto
@@ -26,7 +27,7 @@ export const iniciarSesion = async (usuario)=>{
             return null
         }
     }catch(error){
-       console.log(error); 
+    console.log(error); 
     }
 } 
 
